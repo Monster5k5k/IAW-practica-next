@@ -12,15 +12,9 @@ export default function Home() {
   const [randomPokemon, setRandomPokemon] = useState<Pokemon | null>(null);
 
   useEffect(() => {
-    // Fetch a longer list to pick a random one, or just pick a random ID up to 150
     const randomId = Math.floor(Math.random() * 150) + 1;
 
-    // We can reuse getPokemonList for a single item if we hack the offset, 
-    // but better to fetch a list and pick one, or just create a minimal Pokemon object if we have the ID.
-    // However, PokemonCard needs data. Let's fetch one via list or just construct it if API allows simple ID fetch for list struct.
-    // The lib 'getPokemonList' returns simple list. 
 
-    // Simpler: Fetch list of 1 with value offset
     getPokemonList(1, randomId)
       .then(data => {
         if (data.length > 0) {

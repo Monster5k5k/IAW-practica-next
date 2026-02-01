@@ -60,7 +60,6 @@ export async function getPokemonList(limit: number = 20, offset: number = 0): Pr
     if (!res.ok) throw new Error('Failed to fetch pokemon list');
     const data = await res.json();
 
-    // The list endpoint only gives name and url. We need details for image/stats.
     const promises = data.results.map((p: any) => {
         const id = p.url.split('/').filter(Boolean).pop();
         return getPokemonDetail(id);
