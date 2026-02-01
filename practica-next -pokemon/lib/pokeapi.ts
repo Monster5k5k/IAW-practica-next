@@ -3,7 +3,7 @@ export interface Pokemon {
     id: number;
     name: string;
     image: string;
-    stats?: {
+    stats: {
         hp: number;
         attack: number;
         defense: number;
@@ -52,5 +52,19 @@ export async function getGenerationPokemon(genId: number, limit: number = 10): P
     }
 
     const promises = Array.from(randomIds).map(id => getPokemonDetail(id.toString()));
+    return Promise.all(promises);
+}
+
+export async function getPokemonList(limit: number = 20, offset: number = 0): Promise<Pokemon[]> {
+    const res = await fetch(`${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`);
+    if (!res.ok) throw new Error('Failed to fetch pokemon list');
+    const data = await res.json();
+
+    // The list endpoint only gives name and url. We need details for image/stats.
+    const promises = data.results.map((p: any) => {
+        const id = p.url.split('/').filter(Boolean).pop();
+        return getPokemonDetail(id);
+    });
+
     return Promise.all(promises);
 }

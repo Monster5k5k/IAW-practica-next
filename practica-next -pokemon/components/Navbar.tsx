@@ -1,41 +1,62 @@
 "use client";
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
+    const { dict, language, setLanguage } = useLanguage();
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light border-top border-bottom">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
             <div className="container-fluid">
+                <Link className="navbar-brand" href="/">Pokemon Next</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" href="/">Inicio</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" href="/noticias">Noticias</Link>
+                            <Link className="nav-link" href="/">{dict.home}</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Oferta Educativa
+                                {dict.generations}
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" href="/oferta-educativa/eso">ESO</Link></li>
-                                <li><Link className="dropdown-item" href="/oferta-educativa/bachillerato">Bachillerato</Link></li>
+                                <li><Link className="dropdown-item" href="/generacion/1">Gen 1</Link></li>
+                                <li><Link className="dropdown-item" href="/generacion/2">Gen 2</Link></li>
+                                <li><Link className="dropdown-item" href="/generacion/3">Gen 3</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" href="/biblioteca">Biblioteca Escolar</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" href="/contacto">Contacto</Link>
+                            <Link className="nav-link" href="/contacto">{dict.contact}</Link>
                         </li>
                     </ul>
-                    <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-secondary" type="submit">Search</button>
-                    </form>
+
+                    <div className="d-flex align-items-center">
+                        <div className="btn-group" role="group" aria-label="Language selector">
+                            <button
+                                type="button"
+                                className={`btn btn-sm ${language === 'es' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                                onClick={() => setLanguage('es')}
+                            >
+                                ES
+                            </button>
+                            <button
+                                type="button"
+                                className={`btn btn-sm ${language === 'en' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                                onClick={() => setLanguage('en')}
+                            >
+                                EN
+                            </button>
+                            <button
+                                type="button"
+                                className={`btn btn-sm ${language === 'fr' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                                onClick={() => setLanguage('fr')}
+                            >
+                                FR
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
