@@ -1,0 +1,13 @@
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+a.text-decoration-none {
+  color: inherit;
+}
