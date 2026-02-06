@@ -41,6 +41,8 @@ export async function getGenerationPokemon(genId: number, limit: number = 10): P
     if (genId === 1) { offset = 0; max = 151; }
     else if (genId === 2) { offset = 151; max = 100; }
     else if (genId === 3) { offset = 251; max = 135; }
+    else if (genId === 4) { offset = 386; max = 107; }
+    else if (genId === 4) { offset = 386; max = 107; }
 
     const randomIds = new Set<number>();
     const rangeStart = offset + 1;

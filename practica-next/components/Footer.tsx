@@ -1,17 +1,27 @@
+import Link from 'next/link';
+import Logo from './Logo';
+
 export default function Footer() {
     return (
-        <footer className="bg-secondary text-white p-3 mt-4">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h5>Encuéntranos en..</h5>
-                        <p className="mb-0">DIRECCIÓN POSTAL:</p>
-                        <p className="mb-0">Avda. Guillermo Reyna, 35</p>
-                        <p>04600 HUÉRCAL-OVERA</p>
-                    </div>
-                    <div className="col-md-6 text-end">
-                        <a href="#" className="text-white text-decoration-none">Web 50 aniversario</a>
-                    </div>
+        <footer className="bg-dark text-white mt-5 py-4">
+            <div className="container text-center">
+                <p>&copy; {new Date().getFullYear()} Mi Web con Next.js</p>
+                <div className="mt-3">
+                    <Logo
+                        image="/BiblioWeb.png"
+                        link="https://seneca.juntadeandalucia.es/seneca/biblioweb/catalogo/04002714"
+                        alt="Biblioweb"
+                    />
+                    <Logo
+                        image="/almeria.jpg"
+                        link="https://www.almeria.es"
+                        alt="Almería"
+                    />
+                    <Logo
+                        image="/oferta_educativa.png"
+                        link="https://www.juntadeandalucia.es/educacion/portals/web/ced"
+                        alt="Junta de Andalucía"
+                    />
                 </div>
             </div>
         </footer>

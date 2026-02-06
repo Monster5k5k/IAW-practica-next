@@ -8,8 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
+  modal
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -19,6 +21,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={inter.className}>
         {children}
+        {modal}
       </body>
     </html>
   );

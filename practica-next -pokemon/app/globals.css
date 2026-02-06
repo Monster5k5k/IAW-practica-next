@@ -11,3 +11,21 @@
 a.text-decoration-none {
   color: inherit;
 }
+
+/* Support for nested dropdowns on hover/mobile */
+.dropdown-menu .dropend {
+  position: relative;
+}
+
+.dropdown-menu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  display: none;
+}
+
+.dropend:hover > .dropdown-menu,
+.dropend .dropdown-toggle:active > .dropdown-menu,
+.dropend .dropdown-toggle:focus > .dropdown-menu {
+  display: block;
+}

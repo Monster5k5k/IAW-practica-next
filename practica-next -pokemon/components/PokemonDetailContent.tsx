@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { getPokemonDetail, Pokemon } from '@/lib/pokeapi';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -92,11 +93,21 @@ export default function PokemonDetailContent({ pokemonId, isModal = false }: Pro
                             </div>
                         </div>
 
-                        {!isModal && (
-                            <div className="text-end">
-                                <a href="/" className="btn btn-outline-secondary">{dict.backHome}</a>
-                            </div>
-                        )}
+                        <div className="d-flex justify-content-between align-items-center mt-4">
+                            <Link
+                                href={`/pokemon/${Math.max(1, pokemon.id - 1)}`}
+                                className={`btn btn-primary ${pokemon.id <= 1 ? 'disabled' : ''}`}
+                            >
+                                {dict.previous}
+                            </Link>
+                            {!isModal && <Link href="/" className="btn btn-outline-secondary">{dict.backHome}</Link>}
+                            <Link
+                                href={`/pokemon/${Math.min(1000, pokemon.id + 1)}`}
+                                className={`btn btn-primary ${pokemon.id >= 1000 ? 'disabled' : ''}`}
+                            >
+                                {dict.next}
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

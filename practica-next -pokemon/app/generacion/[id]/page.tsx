@@ -32,22 +32,31 @@ export default function GeneracionPage() {
             <Header />
             <Navbar />
             <div className="container mt-5">
-                <h1 className="text-center mb-5">{dict.generations} {genId}</h1>
-
-                {loading ? (
-                    <div className="text-center py-5">
-                        <div className="spinner-border text-primary" role="status">
-                            <span className="visually-hidden">{dict.loading}</span>
-                        </div>
+                {genId === 404 ? (
+                    <div className="text-center">
+                        <h1 className="mb-4">{dict.notFound}</h1>
+                        <img src="https://http.cat/404" alt="404 Not Found" className="img-fluid" />
                     </div>
                 ) : (
-                    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
-                        {pokemonList.map(p => (
-                            <div className="col" key={p.id}>
-                                <PokemonCard pokemon={p} />
+                    <>
+                        <h1 className="text-center mb-5">{dict.generations} {genId}</h1>
+
+                        {loading ? (
+                            <div className="text-center py-5">
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">{dict.loading}</span>
+                                </div>
                             </div>
-                        ))}
-                    </div>
+                        ) : (
+                            <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+                                {pokemonList.map(p => (
+                                    <div className="col" key={p.id}>
+                                        <PokemonCard pokemon={p} />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
             <Footer />

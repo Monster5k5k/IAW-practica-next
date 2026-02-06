@@ -24,7 +24,15 @@ export default function Navbar() {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><Link className="dropdown-item" href="/generacion/1">Gen 1</Link></li>
                                 <li><Link className="dropdown-item" href="/generacion/2">Gen 2</Link></li>
-                                <li><Link className="dropdown-item" href="/generacion/3">Gen 3</Link></li>
+                                <li className="dropend">
+                                    <a className="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                        {dict.others}
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li><Link className="dropdown-item" href="/generacion/404">{dict.thirdSeason}</Link></li>
+                                        <li><Link className="dropdown-item" href="/generacion/4">{dict.fourthSeason}</Link></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li className="nav-item">

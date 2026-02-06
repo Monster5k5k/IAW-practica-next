@@ -22,6 +22,11 @@ interface Dictionary {
     error: string;
     notFound: string;
     backHome: string;
+    others: string;
+    thirdSeason: string;
+    fourthSeason: string;
+    previous: string;
+    next: string;
 }
 
 const dictionaries: Record<Language, Dictionary> = {
@@ -43,7 +48,12 @@ const dictionaries: Record<Language, Dictionary> = {
         loading: "Cargando...",
         error: "Ha ocurrido un error",
         notFound: "Página no encontrada",
-        backHome: "Volver al inicio"
+        backHome: "Volver al inicio",
+        others: "Otras",
+        thirdSeason: "Gen 3",
+        fourthSeason: "Gen 4",
+        previous: "Anterior",
+        next: "Siguiente"
     },
     en: {
         home: "Home",
@@ -63,7 +73,12 @@ const dictionaries: Record<Language, Dictionary> = {
         loading: "Loading...",
         error: "An error occurred",
         notFound: "Page not found",
-        backHome: "Back to Home"
+        backHome: "Back to Home",
+        others: "Others",
+        thirdSeason: "Gen 3",
+        fourthSeason: "Gen 4",
+        previous: "Previous",
+        next: "Next"
     },
     fr: {
         home: "Accueil",
@@ -83,7 +98,12 @@ const dictionaries: Record<Language, Dictionary> = {
         loading: "Chargement...",
         error: "Une erreur est survenue",
         notFound: "Page non trouvée",
-        backHome: "Retour à l'accueil"
+        backHome: "Retour à l'accueil",
+        others: "Autres",
+        thirdSeason: "Gen 3",
+        fourthSeason: "Gen 4",
+        previous: "Précédent",
+        next: "Suivant"
     }
 };
 

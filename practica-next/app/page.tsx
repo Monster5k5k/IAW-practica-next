@@ -21,56 +21,54 @@ export default function Home() {
             </div>
 
             {/* Carta 1: Almería */}
-            <Link href="/noticias" className="text-decoration-none text-dark">
-              <div className="card mb-3 hover-scale overflow-hidden" style={{ maxWidth: '540px' }}>
-                <div className="row g-0">
-                  <div className="col-md-4 position-relative">
-                    {/* Almeria Imagen */}
-                    <div style={{
-                      width: '100%',
-                      height: '100%',
-                      minHeight: '150px',
-                      backgroundImage: 'url("/almeria.jpg")',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}></div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">Almería</h5>
-                      <p className="card-text">Tierra de alumnos de ASIR y DAW</p>
-                      <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
+            <div className="card mb-3 hover-scale overflow-hidden" style={{ maxWidth: '540px' }}>
+              <div className="row g-0">
+                <div className="col-md-4 position-relative">
+                  {/* Almeria Imagen */}
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '150px',
+                    backgroundImage: 'url("/almeria.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}></div>
+                </div>
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h5 className="card-title">Almería</h5>
+                    <p className="card-text">Tierra de alumnos de ASIR y DAW</p>
+                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <Link href="/noticias/almeria" className="btn btn-primary btn-sm">Ver detalle</Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
 
             {/* Carta 2: Oferta Educativa */}
-            <Link href="/oferta-educativa/eso" className="text-decoration-none text-dark">
-              <div className="card mb-3 hover-scale overflow-hidden" style={{ maxWidth: '540px' }}>
-                <div className="row g-0">
-                  <div className="col-md-4 position-relative">
-                    {/* Oferta_educativa Imagen */}
-                    <div style={{
-                      width: '100%',
-                      height: '100%',
-                      minHeight: '150px',
-                      backgroundImage: 'url("/oferta_educativa.png")',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}></div>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">Oferta Educativa</h5>
-                      <p className="card-text">Conoce nuestros cursos de ESO y Bachillerato</p>
-                      <p className="card-text"><small className="text-muted">Abierto plazo de matrícula</small></p>
-                    </div>
+            <div className="card mb-3 hover-scale overflow-hidden" style={{ maxWidth: '540px' }}>
+              <div className="row g-0">
+                <div className="col-md-4 position-relative">
+                  {/* Oferta_educativa Imagen */}
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '150px',
+                    backgroundImage: 'url("/oferta_educativa.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}></div>
+                </div>
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h5 className="card-title">Oferta Educativa</h5>
+                    <p className="card-text">Conoce nuestros cursos de ESO y Bachillerato</p>
+                    <p className="card-text"><small className="text-muted">Abierto plazo de matrícula</small></p>
+                    <Link href="/noticias/oferta" className="btn btn-primary btn-sm">Ver detalle</Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
 
           </div>
 
