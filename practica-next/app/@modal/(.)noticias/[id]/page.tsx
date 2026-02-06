@@ -1,10 +1,11 @@
 import Modal from '@/components/Modal';
-import { newsData } from '../../news-data';
+import { newsData } from '@/app/news-data';
 import Link from 'next/link';
 
 export default async function NewsModal(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
-    const newsItem = newsData[params.id as keyof typeof newsData];
+    const { id } = params;
+    const newsItem = newsData[id as keyof typeof newsData];
 
     if (!newsItem) {
         return (

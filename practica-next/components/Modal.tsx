@@ -1,10 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function Modal({ children }: { children: React.ReactNode }) {
     const router = useRouter();
-    const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
